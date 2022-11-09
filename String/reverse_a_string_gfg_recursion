@@ -1,0 +1,17 @@
+void reverse(string &str,int i,int j)
+{
+    if(i>j)
+    {
+        return ;
+    }
+    swap(str[i],str[j]);
+    i++;
+    j--;
+    return reverse(str,i,j);
+}
+//User function Template for C++
+
+string reverseWord(string str){
+    reverse(str,0,str.length()-1);
+    return str;
+}
