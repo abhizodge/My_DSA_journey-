@@ -1,0 +1,142 @@
+
+
+#include <iostream>
+
+using namespace std;
+class Node
+{
+public:
+    int data;          //instance varibles
+    Node*next;        //next node which store address of next data
+    
+    Node(int data)
+    {
+        this->data=data;   //storing value of data 
+        this->next=NULL;  // set the value of next node is null
+    }
+};
+void inserHead(Node *&head,int d)// change in the original head
+{
+    Node *temp=new Node(d);  //create a new node
+    temp->next=head;         // set temp next to head
+    head=temp;              //set head of another to temp node
+}
+
+void inserttail(Node *&tail,int d)
+{
+    Node *temp=new Node(d);   //creating new node
+    tail->next=temp;          //set original node address to temp node
+    tail=temp;                 // set tail is equal new node
+    
+    
+}
+void inserposition(Node *&tail,Node*&head,int position,int d)
+{
+    if(position==1)    //if position 1 then directly use head insert code
+    {
+        inserHead(head,d);
+        return;
+        
+    }
+    Node *temp=head;
+    int count=1;                
+    while(count<position-1)           
+    {
+        temp=temp->next;              //increase value of temp
+        count++;
+    }
+    if(temp->next=NULL)                  //if you want and element in the last
+    {
+        inserttail(tail,d);
+    }
+    Node *nextnode=new Node(d);          // created new node 
+    nextnode->next=temp->next;           
+    temp->next=nextnode;
+}
+
+void deletenode(Node *&head , int position)
+{
+    if(position==1)
+    {
+        Node*temp=head;
+        head=head->next;
+        temp->next=NULL;
+        delete temp;
+    }
+    else{
+    Node *curr=head;
+    Node *prv=NULL;
+    int count=1;
+    while(count<position)
+    {
+        prv=curr;
+        curr=curr->next;
+        count++;
+    }
+    prv->next=curr->next;
+    curr->next=NULL;
+    delete curr;
+        
+    }
+}
+
+void delsep(Node * &head,int value)
+{
+    
+    if(head->data==value)
+    {
+        Node *temp=head;
+        head=head->next;
+        temp->next=NULL;
+        delete temp;
+        
+    }
+    else{
+    Node *curr=head;
+    Node *prv=NULL;
+    
+    while(curr->data!=value)
+    {
+        prv=curr;
+        curr=curr->next;
+    }
+    prv->next=curr->next;
+    curr->next=NULL;
+    delete curr;
+        
+    }
+    
+    
+    
+}
+void print(Node *&head)
+{
+    Node*temp=head;              //assign temp==head
+    while(temp!=NULL)
+    {
+        cout<<temp->data<<" ";  //print temp data
+        temp=temp->next;        //move the address of temp
+    }
+}
+
+int main()
+{
+    Node*abhi= new Node(10);   //intalized new node
+   // cout<<abhi->data<<endl;             //acessing the data
+   // cout<<abhi->next;
+    Node *head=abhi;
+    Node *tail=abhi;
+    //inserHead(head,12); //inserting value 12
+   // inserHead(head,15);  //inserting value 15
+   // print(head);        //printing the all the head
+    inserttail(tail,12); 
+    inserttail(tail,15);  
+    inserttail(tail,16);
+    inserposition(tail,head,5,9);
+   deletenode(head,5);
+  // delsep(head,9);
+    print(head);
+    // cout<<endl;
+    // cout<<head->data;
+}
+
