@@ -1,0 +1,87 @@
+
+#include <iostream>
+
+using namespace std;
+class Node
+{
+public:
+    int data;          //instance varibles
+    Node*next;        
+    
+    Node(int data)
+    {
+        this->data=data;   //storing value of data 
+        this->next=NULL;  // set the value of next node is null
+    }
+};
+void insertposition(Node *&tail,int element,int d)
+{
+    if(tail==NULL)
+    {
+        Node *temp=new Node(d);
+        tail=temp;
+        temp->next=temp;
+    }
+    else
+    {
+        Node *curr=tail;
+        while(curr->data!=element)
+        {
+            curr=curr->next;
+        }
+        Node *abhi=new Node(d);
+        abhi->next=curr->next;
+        curr->next=abhi;
+        
+    }
+}
+ void deletenode(Node *&tail, int element)
+{
+    if(tail==NULL)
+    {
+        cout<<"empty";
+        return;
+        
+    }
+    else{
+    Node *prvi=tail;
+    Node *curr=prvi->next;
+    while(curr->data!=element)
+    {
+        prvi=curr;
+        curr=curr->next;
+    }
+    prvi->next=curr->next;
+    if(curr==tail)
+    {
+        tail=prvi;
+    }
+    
+    curr->next=NULL;
+    delete curr;
+    
+        
+    }
+}
+void print(Node *&tail)
+{
+    Node *temp=tail;
+    do{
+        cout<<tail->data<<" ";
+        tail=tail->next;
+        
+    }while(tail!=temp);
+}
+int main()
+{
+    Node *tail=NULL;
+    insertposition(tail,5,12);
+    insertposition(tail,12,6);
+    insertposition(tail,6,9);
+    insertposition(tail,9,10);  
+    deletenode(tail,12);
+    
+    print(tail);
+
+
+}
