@@ -1,0 +1,28 @@
+approach 1:
+
+class Solution
+{
+    public:
+    //Function to remove a loop in the linked list.
+    void removeLoop(Node* head)
+    {
+         unordered_map<Node*,bool>abhishek;
+        Node *curr=head;
+        Node *prvi=NULL;
+        map<Node*,bool>visited;
+        while(curr!=NULL)
+        {
+            if(visited[curr]==true)
+            {
+                prvi->next=NULL;
+                break;
+            }
+            visited[curr]=true;
+            prvi=curr;
+            curr=curr->next;
+        }
+       
+        
+    }
+};
+________________________________________________________________________________________________________________________________________________________________________
