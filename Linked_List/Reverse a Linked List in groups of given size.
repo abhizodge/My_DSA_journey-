@@ -20,9 +20,9 @@ class Solution
             cnt++;
             
         }
-        if(forward!=NULL)
+        if(curr!=NULL)
         {
-            head->next=reverse(forward,k);
+            head->next=reverse(curr,k);
             
         }
         return prvi;
