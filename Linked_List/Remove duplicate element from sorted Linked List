@@ -1,0 +1,54 @@
+Approach 1:
+
+Node *prvi=head;
+      Node *curr=prvi->next;
+      Node *forward=NULL;
+      while(curr!=NULL)
+      {
+          if(curr->next==NULL && curr->data==prvi->data)
+          {
+              prvi->next=NULL;
+              delete curr;
+          }
+          else if(curr->data==prvi->data)
+          {
+              forward=curr->next;
+              prvi->next=forward;
+              curr->next=NULL;
+              curr=forward;
+          }
+          else
+          {
+              prvi=curr;
+              curr=curr->next;
+          }
+      }
+      return head;
+      ______________________________________________________________________________________________________________________________________________________________
+      
+     easy solution 
+      
+       Node *curr=head;
+
+    
+
+    while(curr->next!=NULL)
+
+    {   Node *temp=curr->next;
+
+        if(curr->data==temp->data)
+
+        {   curr->next=temp->next;
+
+            delete(temp);
+
+           
+
+        }
+
+        else{
+
+        curr=curr->next;}
+
+    }
+    return head;
