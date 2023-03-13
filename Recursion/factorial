@@ -1,0 +1,30 @@
+Recursive approach 1:
+
+ Solution{
+public:
+    long long int factorial(int N){
+        if(N==1 ||N==0)
+        {
+            return 1;
+        }
+        long long abhi=N *factorial(N-1);
+        return abhi;
+        //code here
+    }
+};
+
+_________________________________________________________________________________________
+
+approac 2:
+ Solution{
+public:
+    long long int factorial(int N){
+        if(N==1 ||N==0)
+        {
+            return 1;
+        }
+        long long abhi=N *factorial(N-1);
+        return abhi;
+        //code here
+    }
+};
