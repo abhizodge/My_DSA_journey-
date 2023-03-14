@@ -1,0 +1,42 @@
+Node* sortedMerge(Node* head1, Node* head2)  
+{  
+     Node *prvi=head1;
+    Node *curr=prvi->next;
+    Node *temp=head2;
+    while(head2!=NULL)
+    {
+        if(prvi->data<=head2->data && curr==NULL)
+        {
+            head2=head2->next;
+            temp->next=curr;
+            prvi->next=temp;
+            prvi=temp;
+            temp=head2;
+        }
+        else if(head2->data<prvi->data)
+        {
+            head2=head2->next;
+            temp->next=prvi;
+            curr=prvi;
+            prvi=temp;
+            temp=head2;
+            head1=prvi;
+
+        }
+        else if(prvi->data<=head2->data && curr->data>=head2->data)
+        {
+            head2=head2->next;
+            temp->next=curr;
+            prvi->next=temp;
+            curr=temp;
+            temp=head2;
+            
+        }
+        else
+        {
+            prvi=prvi->next;
+            curr=curr->next;
+        }
+    }
+    return head1;
+}  
