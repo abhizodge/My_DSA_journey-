@@ -1,0 +1,31 @@
+#Approach 1:
+time complexity: 0(n)
+space complexity: 0(n)
+
+#include<vector>
+class Solution{
+  public:
+    bool isPalindrome(Node *head)
+    {
+        vector<int>v;
+        Node *abhi=head;
+        while(abhi!=NULL)
+        {
+            v.push_back(abhi->data);
+            abhi=abhi->next;
+        }
+        int s=0;
+        int e=v.size()-1;
+        while(s<=e)
+        {
+            if(v[e]!=v[s])
+            {
+                return 0;
+            }
+            s++;
+            e--;
+        }
+        return 1;
+        
+    }
+};
