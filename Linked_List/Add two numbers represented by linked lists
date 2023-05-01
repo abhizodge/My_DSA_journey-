@@ -1,3 +1,5 @@
+//partially run just passess 100/200 cases
+
 struct Node* addTwoLists(struct Node* first, struct Node* second)
     {
         vector<int>v;
