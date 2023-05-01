@@ -1,0 +1,39 @@
+struct Node* addTwoLists(struct Node* first, struct Node* second)
+    {
+        vector<int>v;
+        long ans=0;
+        while(first!=NULL)
+        {
+            ans=ans*10+first->data;
+            first=first->next;
+        }
+        //ans=45
+        long result=0;
+        while(second!=NULL)
+        {
+            result=result*10+second->data;
+            second=second->next;
+        }
+        //result=345
+        long abhi=ans+result;
+        while(abhi!=0)
+        {
+            long ok=abhi%10;
+            v.push_back(ok);
+            abhi=abhi/10;
+        }
+        
+        Node *head=new Node(v[0]);
+        long i=1;
+        while(i<v.size())
+        {
+            Node *temp=new Node(v[i]);
+            temp->next=head;
+            head=temp;
+            i++;
+        }
+        return head;
+        
+        
+    }
+};
