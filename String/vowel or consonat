@@ -27,18 +27,3 @@ int main()
 ____________________________________
 
 
-
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-    char ch;
-    cin>>ch;
-   
-    char c=tolower(ch);  //used to conver to the lower
-    // toupper(ch)    usesd to convert to the upper
-    cout<<c;
-    return 0;
-}
