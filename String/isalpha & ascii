@@ -1,0 +1,33 @@
+--->checking alphabhet yes or nor
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    char ch;
+    cin>>ch;
+   
+    char c=tolower(ch);  //used to conver to the lower
+    // toupper(ch)    usesd to convert to the upper
+    cout<<c;
+    return 0;
+}
+____________
+
+--->used to convert charcter to asciii
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    char ch;
+    cin>>ch;
+    cout<<int(ch);
+   
+        return 0;
+}
