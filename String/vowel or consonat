@@ -1,0 +1,44 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    char ch;
+    cin>>ch;
+   
+    if(ch=='A' || ch=='E'|| ch=='I'|| ch=='O'|| ch=='U'|| ch=='a'|| ch=='e'|| ch=='i' || ch=='o' || ch=='u')
+    {
+        cout<<"vowel"<<endl;
+    }
+      else if(!isalpha(ch))  //checking charaacter alphabhet or not
+    {
+        cout<<"not alphabhet"<<endl;
+    }
+    else
+    {
+        cout<<"consonat"<<endl;
+    }
+
+    return 0;
+}
+____________________________________
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    char ch;
+    cin>>ch;
+   
+    char c=tolower(ch);  //used to conver to the lower
+    // toupper(ch)    usesd to convert to the upper
+    cout<<c;
+    return 0;
+}
