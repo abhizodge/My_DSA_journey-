@@ -1,0 +1,30 @@
+
+
+#include <iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+    char arr[100];
+    cout<<"enter a name and age :"; 
+    cin.getline(arr,100); //taking input from user we taking input in get line becaues in "cin" after enterin some value space arrived it stop taking value
+    ofstream myfile("xyz.txt",ios::app); //ofstram is data type and myfile is varible that time you have to prvoide file name
+    myfile<<arr; //used to display the value
+    myfile.close();
+    cout<<"Write file operation pefromed sucessfully"<<endl;
+    
+    cout<<"reading operation is started"<<endl;
+    
+    ifstream obj("xyz.txt",);   //ifstream used to read information from the file
+    obj.getline(arr,100);     // getting daata form the uder
+    cout<<"array content "<<arr<<endl;
+    obj.close();
+    cout<<" reading file operation completed";
+    return 0;
+}
+/*
+ios::app--->
+append mode   used when you added for content add the end and avoid overwritten of data
+ofstream myfile("xyz.txt",ios::app);
+*/
