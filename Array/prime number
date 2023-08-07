@@ -1,0 +1,25 @@
+//find the number is prime or not
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    int result=2 ||3 ||5 ||7 ||11;
+    if(result)
+    {
+        cout<<"prime number"<<endl;
+    }
+    else if(n%2==0 || n%3==0 || n%5==0 || n%7==0 || n%11==0)
+    {
+        cout<<"not prime"<<endl;
+    }
+    else
+    {
+        cout<<"prime number"<<endl;
+    }
+
+    return 0;
+}
