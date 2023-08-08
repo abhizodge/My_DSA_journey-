@@ -1,0 +1,47 @@
+
+#include <iostream>
+#include<string.h>
+using namespace std;
+void revrse(char str[200],char revstr[200],int s,int e,int len)
+{
+    // int j=0;
+    // for(int i=e;i>=s;i--)
+    // {
+    //     revstr[j] = str[i];
+    //     j++;
+    // }
+    
+    while(s<e)
+    {
+        swap(revstr[s],revstr[e]);
+        s++;e--;
+    }
+    
+}
+void palindrome(char str[200],char revstr[200],int len)
+{
+    for(int i=0;i<len;i++)
+    {
+        if(str[i]!=revstr[i])
+        {
+            cout<<"not Palindrome"<<endl;
+            return;
+        }
+        
+    }
+    cout<<"palindrome"<<endl;
+}
+int main()
+{
+    char str[200];
+    cin.get(str,200);
+    char revstr[200];
+    strcpy(revstr,str);
+    int len=strlen(str);
+    int s=0;
+    int e=len-1;
+    revrse(str,revstr,s,e,len);
+    palindrome(str,revstr,len);
+
+    return 0;
+}
