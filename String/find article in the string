@@ -1,0 +1,29 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    char ch[200];
+    string str;
+    cin.get(ch,200);
+    int cnt=0;
+    for(int i=0;ch[i];i++)
+    {   
+        if(ch[i]==' ')
+        {
+            if(str=="an"|| str=="a" || str=="the")
+            {
+                cnt++;
+            }
+            str.clear();
+            continue;
+        }
+        str.push_back(ch[i]);
+    }
+    cout<<cnt;
+
+    return 0;
+}
