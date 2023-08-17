@@ -1,0 +1,57 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int findmin(string str[],int n)
+{
+   int min=str[0].length();
+   for(int i=1;i<n;i++)
+   {
+       if(str[i].length()<min)
+       {
+           min=str[i].length();
+       }
+   }
+   return min;
+}
+string lcp(string str[],int n)
+{
+    
+    int minsizeword=findmin(str,n);
+    string result;
+    for(int i=0;i<minsizeword;i++)
+    {
+        char abhi=str[0][i];
+        int j;
+        for(j=1;j<n;j++)
+        {
+            if(str[j][i]!=abhi)
+            {
+                return result;
+                
+            }
+        }
+        result.push_back(abhi);
+    }
+        return result;
+
+}
+int main()
+{
+    int n;
+    cout<<"enter size of array : ";
+    cin>>n;
+    string str[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>str[i];
+    }
+    string ans=lcp(str,n);
+     if(ans.size())
+     {
+         cout<<"common longgest prefix :"<<ans;
+     }
+     else
+     {
+         cout<<"there is no common longest prefix";
+     }
+}
