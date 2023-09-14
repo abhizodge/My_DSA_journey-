@@ -1,0 +1,23 @@
+class Solution {
+  public:
+    vector<int>v;
+    void inord(Node *node)
+    {
+        if(node==NULL)
+        {
+            return ;
+        }
+        inord(node->left);
+        v.push_back(node->data);
+        inord(node->right);
+    }
+    vector<int> inOrder(Node* root) {
+        // if(root==NULL)
+        // {
+        //     return root;
+        // }
+        inord(root);
+        return v;
+        // Your code here
+    }
+};
