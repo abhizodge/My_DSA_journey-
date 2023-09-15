@@ -1,0 +1,28 @@
+class Solution {
+  public:
+  int cnt=0;
+  int total_nodes=0;
+  void solve(Node *root)
+  {
+      
+      if(root==NULL)
+      {
+         return ;
+      }
+      total_nodes++;
+      if(root->left==NULL && root->right==NULL)
+      {
+          cnt++;
+          return;
+      }
+      solve(root->left);
+      solve(root->right);
+  }
+    int countNonLeafNodes(Node* root) {
+        // Code here
+        cnt=0;
+        total_nodes=0;
+        solve(root);
+        return total_nodes-cnt;
+    }
+};
